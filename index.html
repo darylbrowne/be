@@ -101,7 +101,7 @@
 				line-height: 0;
 				/*background: var(--background);*/
 			}
-			a, a:visited {
+			a, a:visited, button, i {
 				color: var(--shade);
 			}
 			a:hover {
@@ -375,6 +375,12 @@
 			    padding: 2em 5em 0 0;
 			    right: 0;
 			    bottom: 0;
+			}
+			button {
+				font-size: 1em;
+				background: none;
+				border: none;
+				margin: .5em;
 			}
 			pre, section:not(.cover),
 			section.art sup {
@@ -43016,7 +43022,7 @@ This moment is yours to like or love.
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<input type='date' /><i class='fas fa-book-open' style='font-size:48px;color:red'></i><button style='font-size:24px'>Button <i class='fas fa-volume-up'></i></button></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><button><i class='fas fa-calendar'></i></button><button><i class='fas fa-book-open'></i></button><button><i class='fas fa-volume-up'></i></button></nav></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 
