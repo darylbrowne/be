@@ -279,13 +279,21 @@
 				-moz-box-sizing: border-box;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
-			}	
+			}/*	
 			@-webkit-keyframes message {
 			  0%,20%,75%,100% { opacity: 0; }
 			  50%,65% { opacity: 1; }
 			}
 			@keyframes message {
 			  0%,20%,75%,100% { opacity: 0; }
+			  50%,65% { opacity: 1; }
+			}*/
+			@-webkit-keyframes message {
+			  0%,20%,75%,100% { opacity: 1; }
+			  50%,65% { opacity: 1; }
+			}
+			@keyframes message {
+			  0%,20%,75%,100% { opacity: 1; }
 			  50%,65% { opacity: 1; }
 			}
 			html, section,article, p, span, a { 
@@ -394,12 +402,13 @@
 				display: block;
 				background-size: auto 2em;
 				background-position: top right;
-				left: 60%;
 				width: 5em;
 				height: 2em;
-			    -ms-transform: rotate(0deg);
+				left: 85%;
+				top: -7vh;
+			    /*-ms-transform: rotate(0deg);
 			    -webkit-transform: rotate(0deg);
-			    transform: rotate(0deg);
+			    transform: rotate(0deg);*/
 			}
 		}
 
@@ -408,7 +417,8 @@
 		    font-size: 3vw;
 		  }
 			section.scrolls a article p::after {
-				left: 64%;
+				left: 85%;
+				top: -15vh;
 			}		  
 		}
 
