@@ -23,7 +23,7 @@
 	<meta name="DC.Language" content="en">
 	<meta property="og:title" content="5000 Reasons..." />
 	<meta property="og:description" content="You're Exactly Where You're Supposed to Be: Messages from Within by Daryl Browne" />
-	<script src="https://kit.fontawesome.com/62418a693d.js" crossorigin="anonymous"></script><!--
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /><!--
 	<meta property="og:image" content="http://darylbrowne.com/images/be-icon.png" />
 	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
 	<link rel="DC.Identifier" href="http://darylbrowne.com">
@@ -377,10 +377,13 @@
 			    bottom: 0;
 			}
 			button {
-				font-size: 1em;
+				font-size: 1.5em;
 				background: none;
 				border: none;
 				margin: .5em;
+			}
+			button span.material-symbols-outlined {
+				font-size: 1em;
 			}
 			pre, section:not(.cover),
 			section.art sup {
@@ -43022,7 +43025,7 @@ This moment is yours to like or love.
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><button><i class='fas fa-calendar'></i></button><button><i class='fas fa-book-open'></i></button><button><i class='fas fa-volume-up'></i></button></nav></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><button><span class='material-symbols-outlined'>calendar_month</span></button><button><span class='material-symbols-outlined'>menu_book</span></button><button><span class='material-symbols-outlined'>groups</span></button></nav></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 
