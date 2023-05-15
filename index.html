@@ -389,6 +389,11 @@
 			button span.material-symbols-outlined,
 			label span.material-symbols-outlined {
 				font-size: 1em;
+				color: var(--shade);
+			}
+			button {
+				display:  block;
+				margin: auto;
 			}
 			pre, section:not(.cover),
 			section.art sup {
@@ -43033,7 +43038,7 @@ This moment is yours to like or love.
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + bookDate + "'></nav></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + bookDate + "'><button><span class='material-symbols-outlined'>menu_book</span></button></nav></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 
