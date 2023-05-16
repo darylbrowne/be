@@ -42928,7 +42928,8 @@ This moment is yours to like or love.
 						pages = [], minute = [], final = [], suffix = '', scroll, scrolls = '';
 					
 					hash = Number(my.strHash()) || my.strHash();
-					bookDate = '2023-05-15';
+					today = new Date();
+					bookDate = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
 
 					if (isNaN(hash)) {
 						isType = hash;
