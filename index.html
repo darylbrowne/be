@@ -42928,8 +42928,18 @@ This moment is yours to like or love.
 						pages = [], minute = [], final = [], suffix = '', scroll, scrolls = '';
 					
 					hash = Number(my.strHash()) || my.strHash();
-					today = new Date();
-					bookDate = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
+					var todaysDate = new Date();
+
+					function convertDate(date) {
+					  var yyyy = date.getFullYear().toString();
+					  var mm = (date.getMonth()+1).toString();
+					  var dd  = date.getDate().toString();
+
+					  var mmChars = mm.split('');
+					  var ddChars = dd.split('');
+
+					  return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
+					}
 
 					if (isNaN(hash)) {
 						isType = hash;
@@ -43071,7 +43081,7 @@ This moment is yours to like or love.
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + bookDate + "'><button><span class='material-symbols-outlined'>redeem</span></button></nav></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + convertDate(todaysDate) + "'><button><span class='material-symbols-outlined'>redeem</span></button></nav></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 
