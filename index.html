@@ -716,6 +716,14 @@
 			}
 			html {
 				padding: env(safe-area-inset); 				
+				background: var(--background);/*
+				background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+				background-image: linear-gradient(to left, #434343 0%, black 100%);*/
+				background-image: url('https://02b7cf4.netsolhost.com/img/background.jpg');
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: 50% 0;
+				background-repeat: no-repeat;
 			}
 			body {
 			    display: -webkit-flex;
@@ -729,15 +737,6 @@
 				text-align : center;
 				font-family: 'IM Fell English', Oronteus Finaeus, serif;
 				font-size: 3.75vw;
-				background: var(--background);/*
-				background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
-				background-image: linear-gradient(to left, #434343 0%, black 100%);*/
-				background-image: url('https://02b7cf4.netsolhost.com/img/background.jpg');
-				background-attachment: fixed;
-				background-size: cover;
-				background-position: 50% 0;
-				background-repeat: no-repeat;
-
 		    }
 			p {
 				opacity: 0;
@@ -82223,7 +82222,7 @@ function convertBase(value, from_base, to_base) {
 						} else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
 						  platform = 'https://www.apple.com'; // iOS
 						} else {
-						  platform = 'https://www.windows.com'; // Windows App
+						  platform = toURL; // Windows App
 						}					
 						pages.push('<a href="' + platform + '"><article><div><p>' + my.journey() + '</p></div></article></a>');
 					} else {
@@ -82456,7 +82455,7 @@ function convertBase(value, from_base, to_base) {
 						const numMonths = Array.from(Array(12), (e,i)=>i+1);
 						const selMonths = numMonths.map(monthOptions);
 						const selDays = numDays.map(dayOptions);
-						const ad = "Get the <i>Table Salt</i> App";
+						const ad = "Get the <i>Take-a-Moment</i> App";
 						let nav = !(window.location.hostname).includes(app) ? "<form onsubmit='return openBook();'><span>A <i class='fa fa-gift' aria-hidden='true'></i> for their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form>" : "<form><span class='app'>" + ad + "<span></form>";
 						scrolls = "<section class='scrolls cover'>" + pages[0] + nav + "</section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
