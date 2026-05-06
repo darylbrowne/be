@@ -1,14 +1,27 @@
 <html>
 <head>
   <title>SaltCave.Rocks</title>
+  <style>
+    legend {
+      font-size: 3em;
+    }
+    input, textarea, label {
+      font-size: 2em;
+    }
+    label {
+      margin-top: 1em;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <fieldset>
     <legend>Coordinates:</legend>
-    <label for="longitude">Longitude</label>
+    <label for="longitude">Longitude:</label>
     <input type="text" id="longitude" name="longitude" />
-    <label for="latitude">Latitude</label>
+    <label for="latitude">Latitude:</label>
     <input type="text" id="latitude" name="latitude" />
+    <label for="readout">Status:</label>
     <textarea id="readout" name="readout"></textarea>  
   </fieldset>
   <button onclick="getLocation();">Begin</button>
