@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>SaltCave.Rocks</title>
+</head>
+<body>
+  <fieldset>
+    <legend>Coordinates:</legend>
+    <label for="longitude">Longitude</label>
+    <input type="text" id="longitude" name="longitude" />
+    <label for="latitude">Latitude</label>
+    <input type="text" id="latitude" name="latitude" />
+    <textarea id="readout" name="readout"></textarea>  
+  </fieldset>
+  <button onclick="();">Begin</button>
+</body>
+<script>
+function getLocation() {
+  // 1. Check if the browser supports Geolocation
+  if (navigator.geolocation) {
+    // 2. Request current position
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
+
+// Success callback function
+function showPosition(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  
+  document.getElementById('latitude').value = latitude;
+  document.getElementById('longitude').value = longitude;
+}
+
+// Error callback function (optional but recommended)
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      document.getElementById('readout').value = "User denied the request for Geolocation.";
+      break;
+    case error.POSITION_UNAVAILABLE:
+      document.getElementById('readout').value = "Location information is unavailable.";
+      break;
+    case error.TIMEOUT:
+      document.getElementById('readout').value = "The request to get user location timed out.";
+      break;
+    case error.UNKNOWN_ERROR:
+      document.getElementById('readout').value = "An unknown error occurred.";
+      break;
+  }
+}
+
+const watchID = navigator.geolocation.watchPosition((position) => {
+  getLocation();
+}, (error) => {
+  console.error("Error code:", error.code);
+}, {
+  enableHighAccuracy: true
+});
+
+// To stop watching later:
+// navigator.geolocation.clearWatch(watchID);
+
+
+</script>
+</html>
