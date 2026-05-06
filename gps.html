@@ -15,25 +15,20 @@
 </body>
 <script>
 function getLocation() {
-  // 1. Check if the browser supports Geolocation
   if (navigator.geolocation) {
-    // 2. Request current position
     navigator.geolocation.getCurrentPosition(showPosition, showError);
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
 }
 
-// Success callback function
 function showPosition(position) {
   const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
-  
+  const longitude = position.coords.longitude;  
   document.getElementById('latitude').value = latitude;
   document.getElementById('longitude').value = longitude;
 }
 
-// Error callback function (optional but recommended)
 function showError(error) {
   switch(error.code) {
     case error.PERMISSION_DENIED:
@@ -59,9 +54,6 @@ const watchID = navigator.geolocation.watchPosition((position) => {
   enableHighAccuracy: true
 });
 
-// To stop watching later:
 // navigator.geolocation.clearWatch(watchID);
-
-
 </script>
 </html>
