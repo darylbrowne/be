@@ -47,9 +47,13 @@ function showError(error) {
 }
 
 const watchID = navigator.geolocation.watchPosition((position) => {
+  document.getElementById('latitude').value = position.coords.latitude;
+  document.getElementById('longitude').value = osition.coords.longitude;
   console.log("New coordinates:", position.coords.latitude, position.coords.longitude);
 }, (error) => {
+  document.getElementById('readout').value = error.code;
   console.error("Error code:", error.code);
+
 }, {
   enableHighAccuracy: true
 });
