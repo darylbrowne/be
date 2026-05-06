@@ -11,7 +11,7 @@
     <input type="text" id="latitude" name="latitude" />
     <textarea id="readout" name="readout"></textarea>  
   </fieldset>
-  <button onclick="();">Begin</button>
+  <button onclick="getLocation();">Begin</button>
 </body>
 <script>
 function getLocation() {
@@ -52,7 +52,7 @@ function showError(error) {
 }
 
 const watchID = navigator.geolocation.watchPosition((position) => {
-  getLocation();
+  console.log("New coordinates:", position.coords.latitude, position.coords.longitude);
 }, (error) => {
   console.error("Error code:", error.code);
 }, {
